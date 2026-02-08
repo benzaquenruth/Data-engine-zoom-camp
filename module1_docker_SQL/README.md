@@ -4,10 +4,10 @@ This repository contains my solution for Module 1 of the Data Engineering Zoomca
 
 Learned how to:
 
-✅ Containerize applications with Docker and Docker Compose
-✅ Set up PostgreSQL databases and write SQL queries
-✅ Build data pipelines to ingest NYC taxi data
-✅ Provision cloud infrastructure with Terraform
+- ✅ Containerize applications with Docker and Docker Compose
+- ✅ Set up PostgreSQL databases and write SQL queries
+- ✅ Build data pipelines to ingest NYC taxi data
+- ✅ Provision cloud infrastructure with Terraform
 
 ## Steps performed
 1. Set up Docker with PostgreSQL
