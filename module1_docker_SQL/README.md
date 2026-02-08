@@ -1,6 +1,13 @@
-# Module 1 Homework – Docker & SQL
+# Module 1 Homework – Docker & SQL & Terraform
 
 This repository contains my solution for Module 1 of the Data Engineering Zoomcamp.
+
+Learned how to:
+
+✅ Containerize applications with Docker and Docker Compose
+✅ Set up PostgreSQL databases and write SQL queries
+✅ Build data pipelines to ingest NYC taxi data
+✅ Provision cloud infrastructure with Terraform
 
 ## Steps performed
 1. Set up Docker with PostgreSQL
