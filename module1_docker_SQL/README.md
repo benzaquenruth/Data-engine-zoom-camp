@@ -16,7 +16,7 @@ Learned how to:
 4. Created Terraform infrastructure
 
 ## Commands used
-```bash
+bash
 docker run -it --rm 
 uv init --python=3.13
 uv add pandas pyarrow sqlalchemy psycopg2-binary
@@ -24,12 +24,10 @@ uv run python ingest_green.py
 export GOOGLE_APPLICATION_CREDENTIALS="Path for the credential file"
 terraform init
 terraform apply
-terraform destroy
+terraform destroy 
 
 
-
-
-
+## Question and answers
 Question 1. What's the version of pip in the image?
 
 Answer:
@@ -48,10 +46,12 @@ For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2
 Answer:
 8,007
 
+```
 SELECT COUNT(*) AS trips
 FROM green_trips_2025_11
 WHERE trip_distance <= 1
-     AND (lpep_pickup_datetime BETWEEN '2025-11-01' AND '2025-12-01' );
+     AND (lpep_pickup_datetime BETWEEN '2025-11-01' AND '2025-12-01' ); 
+```
 
 
 Question 4. Longest trip for each day
@@ -60,12 +60,13 @@ Use the pick up time for your calculations.
 
 Answer:
 2025-11-14
-
+```
 SELECT lpep_pickup_datetime
 FROM green_trips_2025_11
 WHERE trip_distance <= 100
 ORDER BY trip_distance DESC
 LIMIT 1;
+```
 
 
 Question 5. Biggest pickup zone
@@ -73,7 +74,7 @@ Which was the the pickup zone with the largest total_amount (sum of all trips) o
 
 Answer:
 East Harlem South
-
+```
 SELECT
     z."Zone",
     SUM(g.total_amount) AS sum_total_amount
@@ -84,14 +85,14 @@ WHERE DATE(g.lpep_pickup_datetime) = '2025-11-18'
 GROUP BY z."Zone"
 ORDER BY sum_total_amount DESC
 LIMIT 5;
-
+```
 Question 6. Largest tip
 For the passengers picked up in the zone named "East Harlem North" in November 2025, which was the drop off zone that had the largest tip?
 Note: it's tip , not trip. We need the name of the zone, not the ID.
 
 Answer:
 | Upper East Side North | 4242.009999999995 |
-
+```
 SELECT
     z_do."Zone" AS dropoff_zone,
     SUM(g.tip_amount) AS total_tip
@@ -107,7 +108,7 @@ GROUP BY
 ORDER BY
     total_tip DESC
 LIMIT 1;
-
+```
 
 
 Question 7. Terraform Workflow
