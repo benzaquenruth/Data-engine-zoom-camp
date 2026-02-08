@@ -107,9 +107,4 @@ Ensures the environment installs exactly the same packages.
 
 ---
 
-## Final verdict
-
-Your folder is **100% correct for submission**.
-You should **not remove anything** from this list.
-
-You’re ready to submit the repo link.
+## Thanks!
